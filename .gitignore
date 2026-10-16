@@ -8,3 +8,4 @@ artifacts/
 # Versionar informes y figuras de outputs; checkpoints se excluyen abajo.
 *.pt
 *.pth
+*~$
