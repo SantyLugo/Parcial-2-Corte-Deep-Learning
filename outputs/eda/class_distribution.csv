@@ -1,0 +1,17 @@
+split,label,class_name,count
+train,0,basophil,852
+train,1,eosinophil,2181
+train,2,erythroblast,1085
+train,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",2026
+train,4,lymphocyte,849
+train,5,monocyte,993
+train,6,neutrophil,2330
+train,7,platelet,1643
+val,0,basophil,122
+val,1,eosinophil,312
+val,2,erythroblast,155
+val,3,"immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",290
+val,4,lymphocyte,122
+val,5,monocyte,143
+val,6,neutrophil,333
+val,7,platelet,235

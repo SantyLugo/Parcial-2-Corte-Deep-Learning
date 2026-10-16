@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+data/
+artifacts/
+# Versionar informes y figuras de outputs; checkpoints se excluyen abajo.
+*.pt
+*.pth

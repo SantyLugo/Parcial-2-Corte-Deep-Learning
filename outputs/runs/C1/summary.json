@@ -1,0 +1,405 @@
+{
+  "scenario": {
+    "id": "C1",
+    "description": "CNN base with lower learning rate",
+    "batch_norm": false,
+    "dropout": 0.0,
+    "early_stopping_patience": null,
+    "learning_rate": 0.0003
+  },
+  "run_metadata": {
+    "run_name": "BloodMNIST-C1",
+    "started_at_utc": "2026-10-15T18:16:59.567355+00:00",
+    "seed": 42,
+    "device": "cpu",
+    "batch_size": 128,
+    "max_epochs": 40,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0,
+    "num_workers": 0,
+    "num_threads": 4,
+    "train_samples": 11959,
+    "validation_samples": 1712,
+    "class_names": [
+      "basophil",
+      "eosinophil",
+      "erythroblast",
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)",
+      "lymphocyte",
+      "monocyte",
+      "neutrophil",
+      "platelet"
+    ],
+    "dataset": "BloodMNIST",
+    "input_size": [
+      28,
+      28
+    ],
+    "input_channels": 3,
+    "image_transform": "ToTensor; uint8 RGB to float32 [0,1]",
+    "deterministic_algorithms": true,
+    "checkpoint_selection": "lowest_validation_loss",
+    "resolved_config": {
+      "project": "BloodMNIST CNN scenarios",
+      "dataset": {
+        "name": "BloodMNIST",
+        "data_flag": "bloodmnist",
+        "download": true,
+        "official_splits": [
+          "train",
+          "val",
+          "test"
+        ],
+        "test_usage": "final_evaluation_only",
+        "normalize": "uint8_to_float32_0_1"
+      },
+      "reproducibility": {
+        "seed": 42,
+        "device": "cpu",
+        "deterministic": true
+      },
+      "training_defaults": {
+        "batch_size": 128,
+        "max_epochs": 40,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0,
+        "num_workers": 0,
+        "num_threads": 4,
+        "checkpoint_selection": "lowest_validation_loss"
+      },
+      "scenarios": [
+        {
+          "id": "A1",
+          "description": "CNN base",
+          "batch_norm": false,
+          "dropout": 0.0,
+          "early_stopping_patience": null,
+          "learning_rate": 0.001
+        },
+        {
+          "id": "A2",
+          "description": "CNN base + BatchNorm",
+          "batch_norm": true,
+          "dropout": 0.0,
+          "early_stopping_patience": null,
+          "learning_rate": 0.001
+        },
+        {
+          "id": "A3",
+          "description": "CNN + BatchNorm + Dropout",
+          "batch_norm": true,
+          "dropout": 0.3,
+          "early_stopping_patience": null,
+          "learning_rate": 0.001
+        },
+        {
+          "id": "B1",
+          "description": "CNN base + early stopping",
+          "batch_norm": false,
+          "dropout": 0.0,
+          "early_stopping_patience": 6,
+          "learning_rate": 0.001
+        },
+        {
+          "id": "C1",
+          "description": "CNN base with lower learning rate",
+          "batch_norm": false,
+          "dropout": 0.0,
+          "early_stopping_patience": null,
+          "learning_rate": 0.0003
+        }
+      ]
+    },
+    "data_setup_seconds": 0.3664240000071004
+  },
+  "epochs_completed": 40,
+  "best_epoch": 38,
+  "best_validation_loss": 0.40879753900465565,
+  "stopped_early": false,
+  "train_at_best_checkpoint": {
+    "loss": 0.414517067618888,
+    "accuracy": 0.8526632661593778,
+    "macro_precision": 0.8456420789130892,
+    "macro_recall": 0.8051432320501088,
+    "macro_f1": 0.8149760013250944,
+    "per_class": {
+      "basophil": {
+        "precision": 0.7711738484398217,
+        "recall": 0.6091549295774648,
+        "f1": 0.680655737704918,
+        "support": 852
+      },
+      "eosinophil": {
+        "precision": 0.9692519504359798,
+        "recall": 0.9683631361760661,
+        "f1": 0.9688073394495413,
+        "support": 2181
+      },
+      "erythroblast": {
+        "precision": 0.8337801608579088,
+        "recall": 0.8599078341013825,
+        "f1": 0.8466424682395645,
+        "support": 1085
+      },
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)": {
+        "precision": 0.6526275115919629,
+        "recall": 0.8336623889437315,
+        "f1": 0.7321196358907672,
+        "support": 2026
+      },
+      "lymphocyte": {
+        "precision": 0.7724137931034483,
+        "recall": 0.7915194346289752,
+        "f1": 0.7818499127399651,
+        "support": 849
+      },
+      "monocyte": {
+        "precision": 0.8467432950191571,
+        "recall": 0.44511581067472306,
+        "f1": 0.5834983498349835,
+        "support": 993
+      },
+      "neutrophil": {
+        "precision": 0.937394247038917,
+        "recall": 0.9510729613733906,
+        "f1": 0.9441840647635279,
+        "support": 2330
+      },
+      "platelet": {
+        "precision": 0.9817518248175182,
+        "recall": 0.9823493609251369,
+        "f1": 0.982050501977487,
+        "support": 1643
+      }
+    },
+    "confusion_matrix": [
+      [
+        519,
+        7,
+        5,
+        218,
+        87,
+        12,
+        4,
+        0
+      ],
+      [
+        4,
+        2112,
+        0,
+        21,
+        4,
+        9,
+        28,
+        3
+      ],
+      [
+        12,
+        1,
+        933,
+        49,
+        39,
+        0,
+        24,
+        27
+      ],
+      [
+        88,
+        22,
+        55,
+        1689,
+        62,
+        55,
+        55,
+        0
+      ],
+      [
+        18,
+        0,
+        53,
+        100,
+        672,
+        0,
+        6,
+        0
+      ],
+      [
+        31,
+        17,
+        2,
+        468,
+        2,
+        442,
+        31,
+        0
+      ],
+      [
+        1,
+        20,
+        42,
+        43,
+        4,
+        4,
+        2216,
+        0
+      ],
+      [
+        0,
+        0,
+        29,
+        0,
+        0,
+        0,
+        0,
+        1614
+      ]
+    ]
+  },
+  "validation_at_best_checkpoint": {
+    "loss": 0.40879753900465565,
+    "accuracy": 0.8533878504672897,
+    "macro_precision": 0.8497687375675601,
+    "macro_recall": 0.8092607613837918,
+    "macro_f1": 0.8192631411619486,
+    "per_class": {
+      "basophil": {
+        "precision": 0.8111111111111111,
+        "recall": 0.5983606557377049,
+        "f1": 0.6886792452830189,
+        "support": 122
+      },
+      "eosinophil": {
+        "precision": 0.9741935483870968,
+        "recall": 0.967948717948718,
+        "f1": 0.9710610932475885,
+        "support": 312
+      },
+      "erythroblast": {
+        "precision": 0.8282208588957055,
+        "recall": 0.8709677419354839,
+        "f1": 0.8490566037735848,
+        "support": 155
+      },
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)": {
+        "precision": 0.6318681318681318,
+        "recall": 0.7931034482758621,
+        "f1": 0.7033639143730887,
+        "support": 290
+      },
+      "lymphocyte": {
+        "precision": 0.7674418604651163,
+        "recall": 0.8114754098360656,
+        "f1": 0.7888446215139442,
+        "support": 122
+      },
+      "monocyte": {
+        "precision": 0.8607594936708861,
+        "recall": 0.4755244755244755,
+        "f1": 0.6126126126126127,
+        "support": 143
+      },
+      "neutrophil": {
+        "precision": 0.9495548961424333,
+        "recall": 0.960960960960961,
+        "f1": 0.9552238805970149,
+        "support": 333
+      },
+      "platelet": {
+        "precision": 0.975,
+        "recall": 0.9957446808510638,
+        "f1": 0.9852631578947368,
+        "support": 235
+      }
+    },
+    "confusion_matrix": [
+      [
+        73,
+        1,
+        0,
+        32,
+        12,
+        2,
+        2,
+        0
+      ],
+      [
+        1,
+        302,
+        0,
+        3,
+        1,
+        1,
+        4,
+        0
+      ],
+      [
+        1,
+        0,
+        135,
+        4,
+        6,
+        0,
+        3,
+        6
+      ],
+      [
+        14,
+        5,
+        18,
+        230,
+        10,
+        7,
+        6,
+        0
+      ],
+      [
+        1,
+        0,
+        5,
+        17,
+        99,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        73,
+        0,
+        68,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        4,
+        5,
+        1,
+        1,
+        320,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        234
+      ]
+    ]
+  },
+  "generalization_gap_accuracy": -0.0007245843079118908,
+  "elapsed_seconds": 473.96204870000656,
+  "checkpoint": "C:\\Users\\User\\Documents\\Clases\\DeepLearning\\Parcial 2 CNN\\Proyecto_CNN_BloodMNIST\\outputs\\runs\\C1\\C1_best.pt",
+  "history": "C:\\Users\\User\\Documents\\Clases\\DeepLearning\\Parcial 2 CNN\\Proyecto_CNN_BloodMNIST\\outputs\\runs\\C1\\history.json",
+  "curve": "C:\\Users\\User\\Documents\\Clases\\DeepLearning\\Parcial 2 CNN\\Proyecto_CNN_BloodMNIST\\outputs\\runs\\C1\\training_curves.png",
+  "test_used": false
+}

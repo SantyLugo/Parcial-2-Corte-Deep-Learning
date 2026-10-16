@@ -1,0 +1,42 @@
+[
+  {
+    "split": "train",
+    "samples": 11959,
+    "image_shape_chw": [
+      3,
+      28,
+      28
+    ],
+    "classes_present": 8,
+    "class_counts": {
+      "basophil": 852,
+      "eosinophil": 2181,
+      "erythroblast": 1085,
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)": 2026,
+      "lymphocyte": 849,
+      "monocyte": 993,
+      "neutrophil": 2330,
+      "platelet": 1643
+    }
+  },
+  {
+    "split": "val",
+    "samples": 1712,
+    "image_shape_chw": [
+      3,
+      28,
+      28
+    ],
+    "classes_present": 8,
+    "class_counts": {
+      "basophil": 122,
+      "eosinophil": 312,
+      "erythroblast": 155,
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)": 290,
+      "lymphocyte": 122,
+      "monocyte": 143,
+      "neutrophil": 333,
+      "platelet": 235
+    }
+  }
+]

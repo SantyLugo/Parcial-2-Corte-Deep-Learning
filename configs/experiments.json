@@ -1,0 +1,72 @@
+{
+  "project": "BloodMNIST CNN scenarios",
+  "dataset": {
+    "name": "BloodMNIST",
+    "data_flag": "bloodmnist",
+    "download": true,
+    "official_splits": [
+      "train",
+      "val",
+      "test"
+    ],
+    "test_usage": "final_evaluation_only",
+    "normalize": "uint8_to_float32_0_1"
+  },
+  "reproducibility": {
+    "seed": 42,
+    "device": "cpu",
+    "deterministic": true
+  },
+  "training_defaults": {
+    "batch_size": 128,
+    "max_epochs": 40,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "num_workers": 0,
+    "num_threads": 4,
+    "checkpoint_selection": "lowest_validation_loss"
+  },
+  "scenarios": [
+    {
+      "id": "A1",
+      "description": "CNN base",
+      "batch_norm": false,
+      "dropout": 0.0,
+      "early_stopping_patience": null,
+      "learning_rate": 0.001
+    },
+    {
+      "id": "A2",
+      "description": "CNN base + BatchNorm",
+      "batch_norm": true,
+      "dropout": 0.0,
+      "early_stopping_patience": null,
+      "learning_rate": 0.001
+    },
+    {
+      "id": "A3",
+      "description": "CNN + BatchNorm + Dropout",
+      "batch_norm": true,
+      "dropout": 0.3,
+      "early_stopping_patience": null,
+      "learning_rate": 0.001
+    },
+    {
+      "id": "D1",
+      "description": "CNN base + Dropout (p=0.3), sin BatchNorm",
+      "batch_norm": false,
+      "dropout": 0.3,
+      "early_stopping_patience": null,
+      "learning_rate": 0.001
+    },
+    {
+      "id": "C1",
+      "description": "CNN base with lower learning rate",
+      "batch_norm": false,
+      "dropout": 0.0,
+      "early_stopping_patience": null,
+      "learning_rate": 0.0003
+    }
+  ]
+}

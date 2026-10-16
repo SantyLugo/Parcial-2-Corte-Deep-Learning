@@ -1,0 +1,145 @@
+{
+  "scenario_id": "A3",
+  "checkpoint": "C:\\Users\\User\\Documents\\Clases\\DeepLearning\\Parcial 2 CNN\\Proyecto_CNN_BloodMNIST\\outputs\\runs\\A3\\A3_best.pt",
+  "test_samples": 3421,
+  "metrics": {
+    "loss": 0.15024263887194925,
+    "accuracy": 0.9514761765565624,
+    "macro_precision": 0.9442728234336729,
+    "macro_recall": 0.9449635318626479,
+    "macro_f1": 0.9444682780990086,
+    "per_class": {
+      "basophil": {
+        "precision": 0.8911290322580645,
+        "recall": 0.9057377049180327,
+        "f1": 0.8983739837398375,
+        "support": 244
+      },
+      "eosinophil": {
+        "precision": 0.9887820512820513,
+        "recall": 0.9887820512820513,
+        "f1": 0.9887820512820513,
+        "support": 624
+      },
+      "erythroblast": {
+        "precision": 0.9676375404530745,
+        "recall": 0.9614147909967846,
+        "f1": 0.964516129032258,
+        "support": 311
+      },
+      "immature granulocytes(myelocytes, metamyelocytes and promyelocytes)": {
+        "precision": 0.9094138543516874,
+        "recall": 0.8842832469775475,
+        "f1": 0.8966725043782837,
+        "support": 579
+      },
+      "lymphocyte": {
+        "precision": 0.9658119658119658,
+        "recall": 0.9300411522633745,
+        "f1": 0.9475890985324947,
+        "support": 243
+      },
+      "monocyte": {
+        "precision": 0.8662207357859532,
+        "recall": 0.9119718309859155,
+        "f1": 0.8885077186963978,
+        "support": 284
+      },
+      "neutrophil": {
+        "precision": 0.9673105497771174,
+        "recall": 0.9774774774774775,
+        "f1": 0.9723674383868558,
+        "support": 666
+      },
+      "platelet": {
+        "precision": 0.9978768577494692,
+        "recall": 1.0,
+        "f1": 0.9989373007438895,
+        "support": 470
+      }
+    },
+    "confusion_matrix": [
+      [
+        221,
+        2,
+        0,
+        10,
+        0,
+        11,
+        0,
+        0
+      ],
+      [
+        1,
+        617,
+        0,
+        2,
+        0,
+        1,
+        3,
+        0
+      ],
+      [
+        3,
+        0,
+        299,
+        2,
+        0,
+        2,
+        4,
+        1
+      ],
+      [
+        18,
+        4,
+        5,
+        512,
+        3,
+        22,
+        15,
+        0
+      ],
+      [
+        1,
+        0,
+        4,
+        8,
+        226,
+        4,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        1,
+        16,
+        5,
+        259,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        13,
+        0,
+        0,
+        651,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        470
+      ]
+    ]
+  },
+  "test_evaluation_count": 1
+}
