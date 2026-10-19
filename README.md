@@ -72,6 +72,78 @@ La interpretación no debe depender exclusivamente de la exactitud (*accuracy*).
 
 Los resultados y las conclusiones definitivas se incorporarán una vez ejecutados y verificados los runs oficiales. No deben presentarse resultados de pruebas piloto como si fueran resultados definitivos ni completar esta sección con conclusiones que no estén sustentadas por los artefactos generados.
 
+## Arquitectura de la CNN
+
+                 IMAGEN DE ENTRADA
+                    28 × 28 × 3
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │      Conv2D         │
+              │  3 → 32 filtros     │
+              │     kernel 3×3      │
+              │     padding = 1     │
+              └──────────┬──────────┘
+                         │
+                         ▼
+                       ReLU
+                         │
+                         ▼
+                    MaxPool 2×2
+                         │
+                  14 × 14 × 32
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │      Conv2D         │
+              │  32 → 64 filtros    │
+              │     kernel 3×3      │
+              │     padding = 1     │
+              └──────────┬──────────┘
+                         │
+                         ▼
+                       ReLU
+                         │
+                         ▼
+                    MaxPool 2×2
+                         │
+                   7 × 7 × 64
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │      Conv2D         │
+              │ 64 → 128 filtros    │
+              │     kernel 3×3      │
+              │     padding = 1     │
+              └──────────┬──────────┘
+                         │
+                         ▼
+                       ReLU
+                         │
+                         ▼
+                    MaxPool 2×2
+                         │
+                  3 × 3 × 128
+                         │
+                         ▼
+             AdaptiveAvgPool 1 × 1
+                         │
+                  1 × 1 × 128
+                         │
+                         ▼
+                       Flatten
+                         │
+                       128
+                         │
+                         ▼
+                  ┌─────────────┐
+                  │   Linear    │
+                  │ 128 → 8     │
+                  └──────┬──────┘
+                         │
+                         ▼
+                   8 CLASES
+
 ## Escenarios
 
 | ID | Configuración | Cambio frente a la CNN base |
